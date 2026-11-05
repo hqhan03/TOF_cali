@@ -1,0 +1,10 @@
+# Sharp edges and flat faces: the hard case for the mixed-pixel filter.
+robot: {backend: sim}
+sensor: {source: sim, mirror_verified: true}
+mount: {xyz_mm: [0, 40, 60], rpy_deg: [0, 0, 0]}
+scan:
+  center_mm: [-450, 0, 50]
+  object_radius_mm: 85
+processing: {floor_z_mm: 0, roi_radius_mm: 120}
+sim:
+  object: {type: box, size_mm: [120, 80, 100]}

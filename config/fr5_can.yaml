@@ -1,0 +1,67 @@
+# Opaque drinks can on the plate, 2026-11-05: top z = 191, plate z = 60, centre (506, 128).
+# The 15 deg ring is the lowest that keeps the TCP above the confirmed workspace floor. It
+# stops short of the base side, where the wrist would flip (80 deg joint jump near az 165).
+# It starts at az -90 because that is where the 40 deg ring ends.
+robot:
+  backend: fr5
+  expected_tool: 1
+sensor:
+  source: evm
+  mirror_columns: true
+  mirror_verified: true
+  range_bias_mm: -3.0   # compromise, see README: can wants -7, lid wants +1.4
+mount:
+  xyz_mm: [33.91, -62.19, -27.77]
+  rpy_deg: [1.215, 2.394, 25.703]
+  verified: true
+scan:
+  center_mm:
+  - 506
+  - 128
+  - 125
+  object_radius_mm: 85
+  standoff_mm: 190
+  views_per_ring:
+  - 8
+  - 16
+  - 17
+  roll_candidates_deg:
+  - 0
+  - 22.5
+  - -22.5
+  - 45
+  - -45
+  - 67.5
+  - -67.5
+  - 90
+  - -90
+  - 112.5
+  - -112.5
+  - 135
+  - -135
+  - 157.5
+  - -157.5
+  - 180
+  workspace_mm:
+    x:
+    - 300
+    - 750
+    y:
+    - -120
+    - 360
+    z:
+    - 60
+    - 476
+  elevations_deg:
+  - 70
+  - 40
+  - 15
+  azimuth_start_deg: -90
+  ring_arcs_deg:
+  - null
+  - null
+  - - -90
+    - 240
+processing:
+  floor_z_mm: 50
+  roi_radius_mm: 110

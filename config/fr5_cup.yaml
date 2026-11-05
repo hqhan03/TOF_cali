@@ -1,0 +1,24 @@
+# Inverted paper cup, located 2026-11-05 from the live cloud. Same sensor settings as
+# fr5_evm_live.yaml. workspace_mm was confirmed clear by the operator.
+robot:
+  backend: fr5
+  expected_tool: 1
+sensor:
+  source: evm
+  mirror_columns: true
+  mirror_verified: true
+  range_bias_mm: -3.0   # compromise, see README: can wants -7, lid wants +1.4
+mount:
+  xyz_mm: [33.91, -62.19, -27.77]
+  rpy_deg: [1.215, 2.394, 25.703]
+  verified: true
+scan:
+  center_mm: [510, 151, -17]    # top seen at z = +38, table at z = -75
+  object_radius_mm: 75
+  standoff_mm: 250
+  views_per_ring: [8, 16]       # 45 deg joint-step limit needs this density here
+  roll_candidates_deg: [0, 22.5, -22.5, 45, -45, 67.5, -67.5, 90, -90, 112.5, -112.5, 135, -135, 157.5, -157.5, 180]
+  workspace_mm: {x: [300, 750], y: [-120, 360], z: [60, 300]}
+processing:
+  floor_z_mm: -75
+  roi_radius_mm: 100

@@ -1,0 +1,27 @@
+# Tumbler on a plate on the cup, moved away from the base, located 2026-11-05 from one top view: lid top z = 235,
+# plate z = 50..60, lid about 88 mm wide. The straw was not seen, so object_radius_mm
+# allows for it. XY workspace is the one the operator confirmed. z was raised from 300
+# only as far as the arm was already standing when the object was placed (TCP z = 476).
+# A full 360 degree orbit fits inside that XY workspace at this object position.
+robot:
+  backend: fr5
+  expected_tool: 1
+sensor:
+  source: evm
+  mirror_columns: true
+  mirror_verified: true
+  range_bias_mm: -3.0   # compromise, see README: can wants -7, lid wants +1.4
+mount:
+  xyz_mm: [33.91, -62.19, -27.77]
+  rpy_deg: [1.215, 2.394, 25.703]
+  verified: true
+scan:
+  center_mm: [508, 127, 150]
+  object_radius_mm: 120
+  standoff_mm: 270
+  views_per_ring: [8, 16]
+  roll_candidates_deg: [0, 22.5, -22.5, 45, -45, 67.5, -67.5, 90, -90, 112.5, -112.5, 135, -135, 157.5, -157.5, 180]
+  workspace_mm: {x: [300, 750], y: [-120, 360], z: [60, 476]}
+processing:
+  floor_z_mm: 50
+  roi_radius_mm: 135

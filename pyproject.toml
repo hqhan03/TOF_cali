@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hhg-tof"
+version = "0.1.0"
+description = "Multi-view point cloud scanning with a TMF8829 dToF sensor on a Fairino FR5"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "pyyaml", "pyzmq"]
+
+[project.optional-dependencies]
+nucleo = ["pyserial"]
+view = ["matplotlib"]
+live = ["rerun-sdk"]
+dev = ["pytest", "pyserial", "matplotlib", "rerun-sdk"]
+
+[project.scripts]
+hhg-tof = "hhg_tof.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,68 @@
+# Metal spoon standing in the shot glass on the plate, 2026-11-05: tip about (425, -57), z = 217, plate z = 47.
+# Workspace as confirmed for this part of the desk. Glass position not measured: it is nearly invisible.
+robot:
+  backend: fr5
+  expected_tool: 1
+sensor:
+  source: evm
+  mirror_columns: true
+  mirror_verified: true
+  range_bias_mm: -3.0
+mount:
+  xyz_mm:
+  - 33.91
+  - -62.19
+  - -27.77
+  rpy_deg:
+  - 1.215
+  - 2.394
+  - 25.703
+  verified: true
+scan:
+  center_mm: [450, -60, 125]
+  object_radius_mm: 110
+  standoff_mm: 220
+  views_per_ring:
+  - 8
+  - 16
+  - 17
+  roll_candidates_deg:
+  - 0
+  - 22.5
+  - -22.5
+  - 45
+  - -45
+  - 67.5
+  - -67.5
+  - 90
+  - -90
+  - 112.5
+  - -112.5
+  - 135
+  - -135
+  - 157.5
+  - -157.5
+  - 180
+  workspace_mm:
+    x:
+    - 280
+    - 700
+    y:
+    - -310
+    - 160
+    z:
+    - 60
+    - 476
+  elevations_deg:
+  - 70
+  - 40
+  - 15
+  azimuth_start_deg: -120
+  ring_arcs_deg:
+  - null
+  - null
+  - - -120
+    - 240
+processing:
+  floor_z_mm: 40
+  roi_radius_mm: 125

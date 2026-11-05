@@ -1,0 +1,10 @@
+# Full pipeline with no hardware: a 60 mm sphere on a table.
+robot: {backend: sim}
+sensor: {source: sim, mirror_verified: true}
+mount: {xyz_mm: [0, 40, 60], rpy_deg: [0, 0, 0]}
+scan:
+  center_mm: [-450, 0, 60]
+  object_radius_mm: 60
+processing: {floor_z_mm: 0}
+sim:
+  object: {type: sphere, radius_mm: 60}

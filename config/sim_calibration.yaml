@@ -1,0 +1,20 @@
+# Plane calibration with no hardware. The "true" mount is deliberately not the
+# one in `mount`, and the sensor really is mirrored, so the test has to find both.
+robot: {backend: sim}
+sensor: {source: sim}
+mount: {xyz_mm: [0, 40, 60], rpy_deg: [0, 0, 0]}
+scan:
+  center_mm: [-450, 0, 0]
+  object_radius_mm: 5
+  clearance_mm: 5
+  standoff_mm: 300
+  elevations_deg: [75, 60]
+  views_per_ring: [6, 6]
+  roll_cycle_deg: [0, 90, 180, 270]
+  roll_candidates_deg: [0]
+sim:
+  object: {type: none}
+  true_mount_xyz_mm: [4, 33, 67]
+  true_mount_rpy_deg: [2.0, -1.5, 3.0]
+  true_mirror_columns: true
+  range_bias_mm: 12

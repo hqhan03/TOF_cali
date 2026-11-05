@@ -1,0 +1,34 @@
+# Copy to fr5_real.yaml and fill in every value marked MEASURE.
+# Anything left null is refused at startup rather than guessed.
+robot:
+  backend: fr5
+  expected_tool: 0         # MEASURE: `hhg-tof status`. 0 = flange, so mount is flange -> sensor.
+  expected_wobj: 0
+  speed_percent: 10
+  vel_percent: 20
+
+sensor:
+  source: nucleo           # nucleo | evm
+  port: /dev/ttyACM0
+  slot: 7
+  grid: [32, 48]
+  # Per-sensor file. Must be from the same physical sensor, in the same mode.
+  calibration_json: null
+  mirror_columns: false    # settle with `hhg-tof calibrate`
+  mirror_verified: false
+
+mount:
+  xyz_mm: null             # MEASURE: from CAD, refined with `hhg-tof calibrate`
+  rpy_deg: null
+
+scan:
+  # MEASURE: jog the TCP to the object, read `hhg-tof status`. About 450 mm from
+  # the base axis is what the default orbit was checked at; much closer or further
+  # needs `hhg-tof plan` to say so.
+  center_mm: null
+  object_radius_mm: null   # MEASURE: bounding radius about center_mm
+  standoff_mm: 250
+  workspace_mm: null       # MEASURE: {x: [lo, hi], y: [lo, hi], z: [lo, hi]}, clear of every fixture
+
+processing:
+  floor_z_mm: null         # table height in the base frame

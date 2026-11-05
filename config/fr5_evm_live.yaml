@@ -1,0 +1,18 @@
+# EVM taped to the flange. Calibrated 2026-11-05 from data_old/scans/20261105_182352_desk:
+# rms 2.69 mm, held-out table height error under 1.6 mm. This mount is relative to
+# tool 1 and is only valid while the tape has not moved. If it moves, recalibrate
+# with `wrist-scan --level` (see README).
+robot:
+  backend: fr5
+  expected_tool: 1         # TCP = flange + 136.4 mm Z
+sensor:
+  source: evm
+  mirror_columns: true     # measured, 2.69 vs 10.55 mm
+  mirror_verified: true
+  range_bias_mm: -3.0   # compromise, see README: can wants -7, lid wants +1.4
+mount:
+  xyz_mm: [33.91, -62.19, -27.77]
+  rpy_deg: [1.215, 2.394, 25.703]
+  verified: true
+processing:
+  floor_margin_mm: 5.0
